@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -d ":" -f 1,5-15 /etc/passwd | sort
+cut -d ":" -f 1,5-40 /etc/passwd | sort
