@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -aRl | find . -empty | cut -d "/" -f 2	
