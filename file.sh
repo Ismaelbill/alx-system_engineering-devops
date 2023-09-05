@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd 0x02-shell_redirections && chmod u+x * && cd ..
+cd 0x0* && chmod u+x * && cd ..
 
 git add *
 git commit -m "m"
