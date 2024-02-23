@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# reading the content of /etc/passwd
+# output: username:userid:HOME
+
+# IFS= prevents leading/trailing whitespace from being trimmed
+# -r prevents backslashes from being interpreted as escape characters
+while IFS= read -r line; do
+	echo "$line" | cut -d ':' -f 1,3,6
+done < "/etc/passwd"
