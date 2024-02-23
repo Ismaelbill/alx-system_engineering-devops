@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# displaying numbers from 1 to 20, and on each number it displays a certain sentence
+
+count=1
+
+while [ $count -le 20 ]; do
+	case $count in
+		4)
+			printf "%s\nbad luck from China\n" "$count"
+			;;
+		9)
+			printf "%s\nbad luck from Japan\n" "$count"
+			;;
+		17)
+			printf "%s\nbad luck from Italy\n" "$count"
+			;;
+		*)
+			echo "$count"
+			;;
+	esac
+	((count++))
+done
