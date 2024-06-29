@@ -1,6 +1,6 @@
 # install a package
 
-package { ['python3', python3-pip]:
+package { ['python3', 'python3-pip']:
   ensure => installed,
 }
 
