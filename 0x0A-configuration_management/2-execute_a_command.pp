@@ -1,6 +1,5 @@
-# Execute a command
-
-exec { 'kill':
-  command => 'pkill -f killmenow',
-  path    => '/usr/bin'
+#  Execute a command
+exec { 'kill the file killmenow':
+  path    => '/',
+  command => '/usr/bin/pkill killmenow',
 }
