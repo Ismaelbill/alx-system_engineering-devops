@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# Install nginx web server
-
-apt-get update -y
-apt-get install nginx -y
-echo 'Hello World!' > /var/www/tutorial/index.html
-service nginx start
