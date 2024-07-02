@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # Redirection
 
-apt-get update
-apt-get install -y nginx
-mkdir -p /var/www/html
 echo 'Hello World!' > /var/www/html/index.html
 sed -i "/server {\a location/redirect_me {\n\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}" /etc/nginx/sites-available/default
 service nginx restart
