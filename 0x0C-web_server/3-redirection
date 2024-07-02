@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #Redirection
 
+apt-get -y update
+apt-get -y install nginx
 echo "server {
        listen 80;
        listen [::]:80;
