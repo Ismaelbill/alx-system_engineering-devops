@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 #Redirection
 
-apt-get update
-apt-get install -y nginx
-echo 'Hello World!' > /var/www/html/index.html
 echo "server {
        listen 80;
        listen [::]:80;
