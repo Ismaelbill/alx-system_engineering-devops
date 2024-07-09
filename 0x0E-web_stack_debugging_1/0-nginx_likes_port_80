@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# nginx listening on port 80
+apt-get update -y
+apt-get install curl -y
+apt-get install nginx -y
