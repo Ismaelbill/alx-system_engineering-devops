@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# installing tools so nginx listen at 80
+apt update -y
+apt install curl -y
+apt install nginx -y
+service nginx start
+sleep 4
+service nginx stop
