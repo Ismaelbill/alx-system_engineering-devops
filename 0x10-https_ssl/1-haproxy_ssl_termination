@@ -1,1 +1,14 @@
 #!/usr/bin/env bash
+# creating a certificate
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
+service haproxy stop
+service nginx stop
+certbot certonly --standalone
+mkdir -p /etc/ssl/theismael.tech
+cat /etc/letsencrypt/live/theismael.tech/fullchain.pem \
+       /etc/letsencrypt/live/theismael.tech/privkey.pem \
+       | sudo tee /etc/ssl/theismael.tech/theismael.tech.pem
+sed -i "/bind *:80/a \n\tbind *:443 ssl crt /etc/ssl/your_website_domain/your_website_domain.pem\n\tredirect scheme https code 301 if !{ ssl_fc }"
+service haproxy restart
+service nginx restart
