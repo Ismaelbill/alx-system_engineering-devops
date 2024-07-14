@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# displaying information about subdomains.
+
+func () {
+    dig +short $1.$2 | awk -v suub="$1" '{print "The subdomain " suub " is a A record and points to " $1}'
+}
+
+sub=$2
+domain=$1
+
+if [  $sub ]; then
+    func $sub $domain
+else
+    for i in www lb-01 web-01 web-02; do
+        func $i $domain
+    done
+fi
