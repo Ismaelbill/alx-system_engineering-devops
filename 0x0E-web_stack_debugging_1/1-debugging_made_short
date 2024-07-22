@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # installing tools so nginx listen at 80
-apt update -y
-apt install curl -y
-apt install nginx -y
+
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx start
-sleep 4
-service nginx stop
+kill "$(pgrep 'nginx' | head -1)"
