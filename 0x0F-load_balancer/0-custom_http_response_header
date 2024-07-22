@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Configuring Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
-
+sudo apt-get update
+sudo apt-get -y install nginx
 scp -i ~/.ssh/school -o StrictHostKeyChecking=no ./default "ubuntu@54.175.19.58:/etc/nginx/sites-available"
 scp -i ~/.ssh/school -o StrictHostKeyChecking=no ./default "ubuntu@100.25.215.254:/etc/nginx/sites-available"
+sudo service nginx restart
