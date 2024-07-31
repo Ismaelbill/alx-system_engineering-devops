@@ -19,6 +19,7 @@ if __name__ == "__main__":
             if check:
                 f.write(", ")
             check = True
+            bool = str(i['completed']).lower()
             f.write('{{"task": "{}", "completed": {}, "username": "{}"}}'
-                .format(i['title'], str(i['completed']).lower(), rUsers.json()['username']))
+                    .format(i['title'], bool, rUsers.json()['username']))
         f.write(']}')
