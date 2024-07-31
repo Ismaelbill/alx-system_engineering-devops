@@ -4,8 +4,8 @@
 
 if __name__ == "__main__":
 
-    import sys
     import requests
+    import sys
 
     urlUsers = "https://jsonplaceholder.typicode.com/users/{}"\
         .format(sys.argv[1])
