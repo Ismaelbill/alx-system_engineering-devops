@@ -9,7 +9,6 @@ if __name__ == "__main__":
     urlUsers = "https://jsonplaceholder.typicode.com/users/"
     rUsers = requests.get(urlUsers)
     lengthUsers = len(rUsers.json())
-    minusLengthUsers = lengthUsers - 1
     count = 1
     with open("todo_all_employees.json", "w") as f:
         f.write("{")
@@ -29,7 +28,7 @@ if __name__ == "__main__":
                         .format(i['username'], j['title'], bool))
             f.write("}]")
             count += 1
-            if minusLengthUsers > count:
+            if lengthUsers >= count:
                 f.write(", ")
 
         f.write("}")
